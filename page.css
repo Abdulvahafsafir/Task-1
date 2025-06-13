@@ -1,0 +1,127 @@
+/* Reset and base styles */
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.7;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    color: #222;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(34, 49, 63, 0.85);
+    transition: background 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(34,49,63,0.08);
+}
+
+header.scrolled {
+    background: #22313f;
+    box-shadow: 0 4px 12px rgba(34,49,63,0.18);
+}
+
+/* Navigation styles */
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 0;
+    gap: 2rem;
+}
+
+.nav-links li {}
+
+.nav-links a {
+    color: #f7f7f7;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1.2rem;
+    border-radius: 24px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background: #f7ca18;
+    color: #22313f;
+}
+
+/* Section styles */
+section {
+    padding: 110px 24px 60px 24px;
+    min-height: 100vh;
+    background: transparent;
+    transition: background 0.3s;
+}
+
+section:nth-child(even) {
+    background: linear-gradient(90deg, #f7ca18 0%, #f9f9f9 100%);
+}
+
+/* Logo styles */
+.logo {
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #141414;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 8px #22313f33;
+}
+
+.logo img {
+    height: 60px;
+    width: 100px;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    border-radius: 6px;
+}
+
+/* Hamburger menu styles */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #f7ca18;
+    margin-left: auto;
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #22313f;
+        width: 100%;
+        display: none;
+        gap: 0;
+        padding: 1.5rem 0;
+        box-shadow: 0 8px 24px rgba(34,49,63,0.18);
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
